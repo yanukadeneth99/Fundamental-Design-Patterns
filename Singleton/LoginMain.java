@@ -1,17 +1,17 @@
 class Login {
 
   // Private Constructor to prevent the instantiation of this class
-  private Login(){
+  private Login() {
     System.out.println("Login Class Created");
   }
 
   // Private class to create a new instance
-  private static final class LoginSingleton{
+  private static final class LoginSingleton {
     private static Login instance = new Login();
   }
 
   // Returns the singular instance or creates a new one in the first attempt
-  public static Login getInstance(){
+  public static Login getInstance() {
     return LoginSingleton.instance;
   }
 
@@ -26,7 +26,7 @@ class LoginMain {
 
   // Main Runtime
   public static void main(String[] args) {
-    
+
     // Creating two variables of the Login class
     Login login1 = Login.getInstance();
     Login login2 = Login.getInstance();
