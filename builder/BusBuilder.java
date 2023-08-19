@@ -11,7 +11,7 @@ public class BusBuilder extends VehicleBuilder {
 
   @Override
   public void buildName() {
-    System.out.println("Setting name");
+    System.out.println("--Building Bus--");
     bus.setName("Bus");
   }
 
