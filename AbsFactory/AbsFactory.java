@@ -1,5 +1,7 @@
 package AbsFactory;
 
+import java.util.Optional;
+
 // Main Class that Runs the Project
 class AbsFactoryPattern {
   private static final String SHAPE = "SHAPE";
@@ -12,20 +14,26 @@ class AbsFactoryPattern {
   private static final String GREEN = "GREEN";
   private static final String BLUE = "BLUE";
 
+  // Runtime
   public static void main(String[] args) {
+    // Creating a Shape Factory and calling the `draw()`
     AbsFactory shapeFactory = FactoryProducer.getFactory(SHAPE);
-    Shape shape = shapeFactory.getShape(CIRCLE);
+    IShape shape = (IShape) shapeFactory.getObject(CIRCLE);
     shape.draw();
 
-    FactoryProducer.getFactory(SHAPE).getShape(RECTANGLE).draw();
-    FactoryProducer.getFactory(SHAPE).getShape(SQUARE).draw();
+    // Testing Two Shapes
+    ((IShape) (FactoryProducer.getFactory(SHAPE)).getObject(RECTANGLE)).draw();
+    ((IShape) (FactoryProducer.getFactory(SHAPE)).getObject(SQUARE)).draw();
 
-    FactoryProducer.getFactory(COLOR).getColor(RED).fill();
-    FactoryProducer.getFactory(COLOR).getColor(GREEN).fill();
-    FactoryProducer.getFactory(COLOR).getColor(BLUE).fill();
+    // Testing the three Color Objects
+    ((IColor) (FactoryProducer.getFactory(COLOR)).getObject(RED)).fill();
+    ((IColor) (FactoryProducer.getFactory(COLOR)).getObject(GREEN)).fill();
+    ((IColor) (FactoryProducer.getFactory(COLOR)).getObject(BLUE)).fill();
   }
 }
 
+// The Main Factory Producer which creates either a Shape or Color Factory
+// according to the type sent
 class FactoryProducer {
   public static AbsFactory getFactory(String choice) {
     if (choice.equalsIgnoreCase("SHAPE")) {
@@ -35,30 +43,39 @@ class FactoryProducer {
     }
     return null;
   }
+
+  // Private Constructor to prevent it being called
+  private FactoryProducer() {
+  }
 }
 
+// Abstract Factory which creates the Shape and Color Objects. We use
+// `getObject` because they both return two different kinds of objects (Shape
+// and Color)
 abstract class AbsFactory {
-
+  public abstract Object getObject(String type);
 }
 
+// Factory which creates the Shape Objects according to the sent shape
 class ShapeFactory extends AbsFactory {
-  public IShape getShape(String shape) {
+  public IShape getObject(String shape) {
     if (shape == null) {
       return null;
     }
     if (shape.equalsIgnoreCase("CIRCLE")) {
       return Circle.getInstance();
-    } else if (shape.equalsIgnoreCase("Square")) {
+    } else if (shape.equalsIgnoreCase("SQUARE")) {
       return Square.getInstance();
-    } else if (shape.equalsIgnoreCase("Rectangle")) {
+    } else if (shape.equalsIgnoreCase("RECTANGLE")) {
       return Rectangle.getInstance();
     }
     return null;
   }
 }
 
+// Factory which creates the Color Objects according to the sent color
 class ColorFactory extends AbsFactory {
-  public IColor getColor(String color) {
+  public IColor getObject(String color) {
     if (color == null) {
       return null;
     }
