@@ -34,5 +34,7 @@ class LoginMain {
     // Testing the validateUser method
     System.out.println(login1.validateUser("admin", "password"));
     System.out.println(login2.validateUser("admin", "password"));
+    System.out.println(login1.validateUser("notadmin", "not password"));
+    System.out.println(login2.validateUser("notadmin", "not password"));
   }
 }
