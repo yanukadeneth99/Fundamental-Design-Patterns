@@ -1,5 +1,12 @@
 # Fundamental Design Patterns (GOF) Examples
 
-- [Singleton Pattern](/Singleton)
-- [Abstract Factory Pattern](/AbsFactory)
-- [Builder Pattern](/Builder)
+## Creational
+
+- [Singleton Pattern](/Creational/Singleton)
+- [Abstract Factory Pattern](/Creational/AbsFactory)
+- [Builder Pattern](/Creational/Builder)
+- [Combination of Builder and Abstract Factory](/Creational/AbsAndFactory)
+
+## Behavioral
+
+- [Stratergy](/Behavioral/Stratergy)
