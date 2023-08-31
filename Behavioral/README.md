@@ -1,3 +1,3 @@
-# Stratergy
+# Behavioral Methods
 
-Stratergy focuses on how classes and object interact or distribute responsibility.
+Behavioral Methods focus on how classes interact with each and how they distribute responsibility.
