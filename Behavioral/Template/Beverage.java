@@ -2,8 +2,8 @@ package Behavioral.Template;
 
 abstract public class Beverage {
 
-  // Defining the life cycles
-  void prepareRecipe() {
+  // Defining the life cycles. Final to prevent this being overwritten
+  final void prepareRecipe() {
     boilWater();
     brew();
     addCondiments();
