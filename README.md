@@ -11,4 +11,5 @@
 
 - [Stratergy](/Behavioral/Stratergy)
 - [Command](/Behavioral/Command)
-- [Template](/Behavioral/Template/)
+- [Template](/Behavioral/Template)
+- [Chain of Responsibility](/Behavioral/COF)
