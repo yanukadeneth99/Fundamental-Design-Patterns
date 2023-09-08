@@ -10,3 +10,5 @@
 ## Behavioral
 
 - [Stratergy](/Behavioral/Stratergy)
+- [Command](/Behavioral/Command)
+- [Template](/Behavioral/Template/)
