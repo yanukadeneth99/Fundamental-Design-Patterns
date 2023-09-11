@@ -13,3 +13,7 @@
 - [Command](/Behavioral/Command)
 - [Template](/Behavioral/Template)
 - [Chain of Responsibility](/Behavioral/COF)
+
+## Structural
+
+- [Decorator](/Structural/Decorator)
